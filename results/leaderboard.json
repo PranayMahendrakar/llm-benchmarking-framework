@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-03-06T11:43:03.457569+00:00",
+  "total_models": 2,
+  "leaderboard": [
+    {
+      "model_id": "gpt2",
+      "timestamp": "2026-03-06T11:43:02.977898+00:00",
+      "reasoning_score": 0.4,
+      "reasoning_correct": "4/10",
+      "latency_mean_s": 1.8689,
+      "latency_p50_s": 1.8675,
+      "latency_p90_s": 1.8852,
+      "throughput_tok_s": 26.1,
+      "memory_footprint_mb": 12.78,
+      "memory_peak_mb": 1022.91,
+      "device": "cpu",
+      "status": "OK",
+      "rank": 1
+    },
+    {
+      "model_id": "distilgpt2",
+      "timestamp": "2026-03-06T11:42:27.134521+00:00",
+      "reasoning_score": 0.2,
+      "reasoning_correct": "2/10",
+      "latency_mean_s": 1.367,
+      "latency_p50_s": 1.3684,
+      "latency_p90_s": 1.3806,
+      "throughput_tok_s": 35.55,
+      "memory_footprint_mb": 92.55,
+      "memory_peak_mb": 844.39,
+      "device": "cpu",
+      "status": "OK",
+      "rank": 2
+    }
+  ]
+}
