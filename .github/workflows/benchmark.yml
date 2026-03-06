@@ -1,0 +1,117 @@
+name: LLM Benchmark & Leaderboard Update
+
+on:
+  schedule:
+    # Run every Sunday at 02:00 UTC
+    - cron: "0 2 * * 0"
+  push:
+    branches: [main]
+    paths:
+      - "benchmarks/**"
+      - "scripts/**"
+      - ".github/workflows/benchmark.yml"
+      - "requirements.txt"
+  workflow_dispatch:
+    inputs:
+      models:
+        description: "Space-separated HuggingFace model IDs to benchmark"
+        required: false
+        default: "distilgpt2 gpt2"
+      max_new_tokens:
+        description: "Max tokens to generate per prompt"
+        required: false
+        default: "50"
+
+permissions:
+  contents: write
+
+jobs:
+  benchmark:
+    name: Run Benchmarks
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      # ------------------------------------------------------------------ #
+      # 1. Checkout repository
+      # ------------------------------------------------------------------ #
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # ------------------------------------------------------------------ #
+      # 2. Set up Python
+      # ------------------------------------------------------------------ #
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      # ------------------------------------------------------------------ #
+      # 3. Install dependencies
+      # ------------------------------------------------------------------ #
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # ------------------------------------------------------------------ #
+      # 4. Determine which models to run
+      # ------------------------------------------------------------------ #
+      - name: Set model list
+        id: model_list
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "models=${{ github.event.inputs.models }}" >> $GITHUB_OUTPUT
+            echo "max_new_tokens=${{ github.event.inputs.max_new_tokens }}" >> $GITHUB_OUTPUT
+          else
+            echo "models=distilgpt2 gpt2" >> $GITHUB_OUTPUT
+            echo "max_new_tokens=50" >> $GITHUB_OUTPUT
+          fi
+
+      # ------------------------------------------------------------------ #
+      # 5. Run benchmarks
+      # ------------------------------------------------------------------ #
+      - name: Run benchmark suite
+        run: |
+          python benchmarks/run_benchmark.py \
+            --models ${{ steps.model_list.outputs.models }} \
+            --output results/benchmark_results.json \
+            --max-new-tokens ${{ steps.model_list.outputs.max_new_tokens }} \
+            --device cpu
+        env:
+          HF_HUB_DISABLE_PROGRESS_BARS: "1"
+          TOKENIZERS_PARALLELISM: "false"
+
+      # ------------------------------------------------------------------ #
+      # 6. Update leaderboard
+      # ------------------------------------------------------------------ #
+      - name: Update leaderboard
+        run: python scripts/update_leaderboard.py
+
+      # ------------------------------------------------------------------ #
+      # 7. Upload raw results as artifact
+      # ------------------------------------------------------------------ #
+      - name: Upload benchmark results artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: benchmark-results-${{ github.run_number }}
+          path: results/
+          retention-days: 90
+
+      # ------------------------------------------------------------------ #
+      # 8. Commit & push leaderboard back to repo
+      # ------------------------------------------------------------------ #
+      - name: Commit and push leaderboard
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add results/benchmark_results.json results/leaderboard.json LEADERBOARD.md
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore(leaderboard): auto-update [skip ci]"
+            git push
+          fi
