@@ -1,0 +1,78 @@
+{
+  "models": [
+    {
+      "id": "distilgpt2",
+      "name": "DistilGPT-2",
+      "hf_model_id": "distilgpt2",
+      "params": "82M",
+      "tier": "ci_safe",
+      "notes": "Distilled GPT-2. Runs in CI. ~82M params, very fast.",
+      "run_in_ci": true,
+      "max_new_tokens": 50
+    },
+    {
+      "id": "gpt2",
+      "name": "GPT-2 Small",
+      "hf_model_id": "gpt2",
+      "params": "117M",
+      "tier": "ci_safe",
+      "notes": "GPT-2 Small baseline. Runs in CI.",
+      "run_in_ci": true,
+      "max_new_tokens": 50
+    },
+    {
+      "id": "gpt2-medium",
+      "name": "GPT-2 Medium",
+      "hf_model_id": "gpt2-medium",
+      "params": "345M",
+      "tier": "ci_borderline",
+      "notes": "GPT-2 Medium. May run in CI with 7GB RAM GitHub runner.",
+      "run_in_ci": false,
+      "max_new_tokens": 50
+    },
+    {
+      "id": "phi-2",
+      "name": "Phi-2",
+      "hf_model_id": "microsoft/phi-2",
+      "params": "2.7B",
+      "tier": "local_only",
+      "notes": "Microsoft Phi-2. 2.7B params. Run locally and push results.",
+      "run_in_ci": false,
+      "max_new_tokens": 100,
+      "requires_trust_remote_code": true
+    },
+    {
+      "id": "mistral-7b",
+      "name": "Mistral-7B-v0.1",
+      "hf_model_id": "mistralai/Mistral-7B-v0.1",
+      "params": "7B",
+      "tier": "local_only",
+      "notes": "Mistral 7B. Run locally with llama.cpp or Ollama.",
+      "run_in_ci": false,
+      "max_new_tokens": 100,
+      "ollama_tag": "mistral"
+    },
+    {
+      "id": "llama3-8b",
+      "name": "LLaMA-3-8B",
+      "hf_model_id": "meta-llama/Meta-Llama-3-8B",
+      "params": "8B",
+      "tier": "local_only",
+      "notes": "Meta LLaMA-3 8B. Requires HF access token. Run locally.",
+      "run_in_ci": false,
+      "max_new_tokens": 100,
+      "requires_hf_token": true,
+      "ollama_tag": "llama3"
+    }
+  ],
+  "ci_models": [
+    "distilgpt2",
+    "gpt2"
+  ],
+  "local_models": [
+    "gpt2-medium",
+    "phi-2",
+    "mistral-7b",
+    "llama3-8b"
+  ]
+}
