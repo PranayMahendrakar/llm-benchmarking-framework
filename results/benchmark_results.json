@@ -1,7 +1,7 @@
 [
   {
     "model_id": "distilgpt2",
-    "timestamp": "2026-03-15T04:26:19.905902+00:00",
+    "timestamp": "2026-03-22T04:12:15.620455+00:00",
     "device": "cpu",
     "reasoning": {
       "score": 0.2,
@@ -12,96 +12,96 @@
           "id": "arithmetic_1",
           "category": "arithmetic",
           "passed": false,
-          "latency_s": 1.2823,
+          "latency_s": 1.2354,
           "response_snippet": " I am not sure.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
         },
         {
           "id": "logic_1",
           "category": "logic",
           "passed": true,
-          "latency_s": 1.2876,
+          "latency_s": 1.2275,
           "response_snippet": " Yes.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
         },
         {
           "id": "common_sense_1",
           "category": "common_sense",
           "passed": false,
-          "latency_s": 1.2847,
+          "latency_s": 1.2202,
           "response_snippet": " I don't know. I don't know. I don't know. I don't know. I don't know. I don't k"
         },
         {
           "id": "arithmetic_2",
           "category": "arithmetic",
           "passed": false,
-          "latency_s": 1.284,
+          "latency_s": 1.2276,
           "response_snippet": " I think it is 100 divided by 4.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
         },
         {
           "id": "logic_2",
           "category": "logic",
           "passed": true,
-          "latency_s": 1.2425,
+          "latency_s": 1.2336,
           "response_snippet": " Yes.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
         },
         {
           "id": "common_sense_2",
           "category": "common_sense",
           "passed": false,
-          "latency_s": 1.2768,
+          "latency_s": 1.2455,
           "response_snippet": " 1.5 days.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
         },
         {
           "id": "arithmetic_3",
           "category": "arithmetic",
           "passed": false,
-          "latency_s": 1.2607,
+          "latency_s": 1.2319,
           "response_snippet": " The answer is: 8.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
         },
         {
           "id": "sequence_1",
           "category": "sequence",
           "passed": false,
-          "latency_s": 1.2755,
+          "latency_s": 1.2544,
           "response_snippet": " The number of times the number of times the number of times the number of times"
         },
         {
           "id": "common_sense_3",
           "category": "common_sense",
           "passed": false,
-          "latency_s": 1.2633,
+          "latency_s": 1.2165,
           "response_snippet": " I don't know. I don't know. I don't know. I don't know. I don't know. I don't k"
         },
         {
           "id": "logic_3",
           "category": "logic",
           "passed": false,
-          "latency_s": 1.282,
+          "latency_s": 1.2466,
           "response_snippet": " 1. If a car has 4 wheels and a bike has 2 wheels, how many wheels do 2 cars and"
         }
       ]
     },
     "latency": {
-      "mean_s": 1.2648,
-      "p50_s": 1.2661,
-      "p90_s": 1.2884,
-      "min_s": 1.2442,
-      "max_s": 1.2884
+      "mean_s": 1.2233,
+      "p50_s": 1.2261,
+      "p90_s": 1.2274,
+      "min_s": 1.2119,
+      "max_s": 1.2274
     },
     "throughput": {
-      "tokens_per_second": 38.86,
+      "tokens_per_second": 40.6,
       "total_tokens": 150,
-      "elapsed_s": 3.86
+      "elapsed_s": 3.6946
     },
     "memory_mb": {
-      "before_load": 386.31,
-      "after_load": 478.8,
-      "model_footprint": 92.49,
-      "peak": 844.25
+      "before_load": 388.94,
+      "after_load": 482.19,
+      "model_footprint": 93.25,
+      "peak": 847.62
     }
   },
   {
     "model_id": "gpt2",
-    "timestamp": "2026-03-15T04:26:54.932614+00:00",
+    "timestamp": "2026-03-22T04:12:48.680948+00:00",
     "device": "cpu",
     "reasoning": {
       "score": 0.4,
@@ -112,91 +112,91 @@
           "id": "arithmetic_1",
           "category": "arithmetic",
           "passed": false,
-          "latency_s": 1.8685,
+          "latency_s": 1.7332,
           "response_snippet": " 15 + 27 is the number of times you have to use the word \"15\" in your sentence.\n"
         },
         {
           "id": "logic_1",
           "category": "logic",
           "passed": true,
-          "latency_s": 1.8057,
+          "latency_s": 1.7404,
           "response_snippet": " Yes, cats need food.\n\nQuestion: If all cats are animals and all animals need fo"
         },
         {
           "id": "common_sense_1",
           "category": "common_sense",
           "passed": true,
-          "latency_s": 1.8125,
+          "latency_s": 1.7032,
           "response_snippet": " The next day, the next day, the next day.\n\nQuestion: What comes after Tuesday? "
         },
         {
           "id": "arithmetic_2",
           "category": "arithmetic",
           "passed": false,
-          "latency_s": 1.8179,
+          "latency_s": 1.7107,
           "response_snippet": " 100 divided by 4 is the number of times you have to divide by 4.\n\nAnswer: 100 d"
         },
         {
           "id": "logic_2",
           "category": "logic",
           "passed": true,
-          "latency_s": 1.7958,
+          "latency_s": 1.7052,
           "response_snippet": " Yes, it is blue during the day.\n\nQuestion: Is the sky blue during the night? An"
         },
         {
           "id": "common_sense_2",
           "category": "common_sense",
           "passed": false,
-          "latency_s": 1.7976,
+          "latency_s": 1.7047,
           "response_snippet": " 1-3 days.\n\nQuestion: How many days are in a week? Answer: 1-3 days.\n\nQuestion: "
         },
         {
           "id": "arithmetic_3",
           "category": "arithmetic",
           "passed": false,
-          "latency_s": 1.8296,
+          "latency_s": 1.7553,
           "response_snippet": " 8 is the number of times the number of times the number of times the number of "
         },
         {
           "id": "sequence_1",
           "category": "sequence",
           "passed": false,
-          "latency_s": 1.8514,
+          "latency_s": 1.7409,
           "response_snippet": " The next number in the sequence is the number of the last number in the sequenc"
         },
         {
           "id": "common_sense_3",
           "category": "common_sense",
           "passed": false,
-          "latency_s": 1.8317,
+          "latency_s": 1.7124,
           "response_snippet": " Winter is coming.\n\nAnswer: Winter is coming.\n\nAnswer: Winter is coming.\n\nAnswer"
         },
         {
           "id": "logic_3",
           "category": "logic",
           "passed": true,
-          "latency_s": 1.8695,
+          "latency_s": 1.7307,
           "response_snippet": " 2.\n\nAnswer: 3.\n\nAnswer: 4.\n\nAnswer: 5.\n\nAnswer: 6.\n\nAnswer: 7.\n\nAnswer: 8.\n\nAns"
         }
       ]
     },
     "latency": {
-      "mean_s": 1.8229,
-      "p50_s": 1.8045,
-      "p90_s": 1.8717,
-      "min_s": 1.7787,
-      "max_s": 1.8717
+      "mean_s": 1.7168,
+      "p50_s": 1.7088,
+      "p90_s": 1.7489,
+      "min_s": 1.6837,
+      "max_s": 1.7489
     },
     "throughput": {
-      "tokens_per_second": 27.34,
+      "tokens_per_second": 28.94,
       "total_tokens": 150,
-      "elapsed_s": 5.4871
+      "elapsed_s": 5.1834
     },
     "memory_mb": {
-      "before_load": 534.08,
-      "after_load": 546.86,
-      "model_footprint": 12.78,
-      "peak": 1022.29
+      "before_load": 537.46,
+      "after_load": 544.86,
+      "model_footprint": 7.4,
+      "peak": 1018.82
     }
   }
 ]
