@@ -1,11 +1,11 @@
 # LLM Benchmark Leaderboard
 
-> Last updated: 2026-09-06T06:40:44.979637+00:00
+> Last updated: 2026-09-13T07:00:25.587934+00:00
 
 | Rank | Model | Reasoning Score | Correct | Latency (mean) | Throughput (tok/s) | Memory (MB) | Device | Status |
 |------|-------|----------------|---------|---------------|-------------------|-------------|--------|--------|
-| 1 | gpt2 | 40.00% | 4/10 | 1.191s | 41.8 | 140 | cpu | OK |
-| 2 | distilgpt2 | 20.00% | 2/10 | 0.760s | 66.0 | 154 | cpu | OK |
+| 1 | gpt2 | 40.00% | 4/10 | 1.584s | 31.0 | 139 | cpu | OK |
+| 2 | distilgpt2 | 20.00% | 2/10 | 1.137s | 43.2 | 154 | cpu | OK |
 
 ## Metric Definitions
 
